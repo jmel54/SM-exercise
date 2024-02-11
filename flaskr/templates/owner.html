@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Page</title>
+  </head>
+  <body>
+    <h1>Owner Page</h1>
+    <h2>Toppings</h2>
+    <ul>
+      {% for topping in toppings %}
+      <li>
+        {{ topping.name }}kl
+        <form method="POST" action="{{ url_for('views.owner') }}">
+          <input type="hidden" name="topping_id" value="{{ topping.id }}" />
+          <button type="submit" name="action" value="remove">Remove</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+    <h2>Add Topping</h2>
+    <form method="POST" action="{{ url_for('views.owner') }}">
+      <input type="text" name="topping_name" required />
+      <button type="submit" name="action" value="add">Add Topping</button>
+    </form>
+  </body>
+</html>
