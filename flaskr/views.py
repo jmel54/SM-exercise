@@ -6,10 +6,10 @@ views = Blueprint('views',__name__)
 def landing():
     return render_template("landing.html")
 
-@views.route('/topping')
-def topping():
-    return "<h1>Topping</h1>"
+@views.route('/owner')
+def owner():
+    return render_template("owner.html")
 
-@views.route('/pizza')
-def pizza():
-    return "<h1>Pizza</h1>"
+@views.route('/chef')
+def chef():
+    return render_template("chef.html")
